@@ -7,7 +7,7 @@ import Gallery from './components/Gallery'
 function App() {
   const [categories] = useState([
     {
-      name: 'comerical',
+      name: 'commercial',
       description: 'Photos of grocery stores, food trucks, and other commerical projects',
     },
     { name: 'portraits', description:'Portraits of people in my life'},
@@ -26,7 +26,7 @@ function App() {
       currentCategory={currentCategory}
       />
     <main>
-      <Gallery />
+      <Gallery currentCategory={currentCategory} />
       <About />
     </main>
   </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { capitalizeFirstLetter } from "../../assets/utils/helpers";
 
 function Nav(props) {
@@ -8,9 +8,10 @@ function Nav(props) {
    currentCategory,
  } = props;
 
- useEffect(() => {
-   document.title = capitalizeFirstLetter(currentCategory.name);
- }, [currentCategory]);
+const handleClick = (item) => {
+  console.log(item);
+  return item; 
+}
 
 
   return (
@@ -28,13 +29,13 @@ function Nav(props) {
             </a>
           </li>
           <li className="mx-2">
-            <span>
+            <span onClick={() => handleClick('Contact')}>
               Contact
             </span>
           </li>
           {categories.map((category) => (
               <li className={`mx-1
-                ${currentCategory.name === category.name && 'navActive'
+                ${currentCategory.name === category.name
               }`} key={category.name}>
                 <span 
                   onClick={() => {
