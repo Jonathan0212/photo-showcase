@@ -3,6 +3,8 @@ import { render,cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Nav from "..";
 
+afterEach(cleanup);
+
 //Nav Component render test
 describe('Nav component', ()=> {
     //baseline test
@@ -42,4 +44,3 @@ describe('links are visible', () => {
 
 
 
-afterEach(cleanup);
